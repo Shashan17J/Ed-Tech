@@ -10,6 +10,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
+import Catalog from "./pages/Catalog";
 import EditCourse from "./components/core/Dashboard/EditCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import MyProfile from "./components/core/Dashboard/MyProfile";
@@ -17,6 +18,7 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
+import CourseDetails from "./pages/CourseDetails";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
 import AddCourse from "./components/core/Dashboard/AddCourse";
@@ -34,6 +36,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="catalog/:catalogName" element={<Catalog />} />
         <Route
           path="signup"
           element={
@@ -95,7 +98,7 @@ function App() {
           }
         >
           <Route path="/contact" element={<Contact />} />
-
+          <Route path="courses/:courseId" element={<CourseDetails />} />
           <Route path="dashboard/my-profile" element={<MyProfile />} />
           <Route path="dashboard/settings" element={<Settings />} />
 
