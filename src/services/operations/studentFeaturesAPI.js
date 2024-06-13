@@ -48,7 +48,6 @@ export async function BuyCourse(
       );
       return;
     }
-    console.log("sheeeeeeeeeeeeeeeeeeeee", user_details);
 
     // Initiating the Order in Backend
     const orderResponse = await apiConnector(
@@ -65,7 +64,6 @@ export async function BuyCourse(
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message);
     }
-    console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse);
 
     // Opening the Razorpay SDK
     const options = {
